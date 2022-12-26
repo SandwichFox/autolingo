@@ -116,7 +116,7 @@ export default class DuolingoChallenge extends ReactUtils {
         break;
       default:
         const error_string = `AUTOLINGO - UNKNOWN CHALLENGE TYPE: ${this.challenge_type}`;
-        alert(error_string);
+        //alert(error_string);
         throw new Error(error_string);
     }
   };
@@ -130,7 +130,7 @@ export default class DuolingoChallenge extends ReactUtils {
       "[data-test='challenge-translate-input']"
     );
     this.ReactFiber(challenge_translate_input)?.pendingProps?.onChange({
-      target: { value: translation },
+      target: { value: translation.toLowerCase().replace(/[.,/!^&*;:{}=-_`~()]/g, "") },//Translation Decapitalized and DePunctuated
     });
   };
 
