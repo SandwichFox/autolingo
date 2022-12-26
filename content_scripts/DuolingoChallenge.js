@@ -130,7 +130,9 @@ export default class DuolingoChallenge extends ReactUtils {
       "[data-test='challenge-translate-input']"
     );
     this.ReactFiber(challenge_translate_input)?.pendingProps?.onChange({
-      target: { value: translation.toLowerCase().replace(/[.,/!^&*;:{}=-_`~()]/g, "") },//Translation Decapitalized and DePunctuated
+      target: {
+        value: translation.toLowerCase().replace(/[.,/!^&*;:{}=-_`~()]/g, ""),
+      }, //Translation Decapitalized and DePunctuated
     });
   };
 
